@@ -8,30 +8,50 @@
 \usepackage{color}
 %\usepackage{times}
 \usepackage[colorlinks, linkcolor=black, anchorcolor=black, citecolor=black]{hyperref}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
 
 \usepackage{geometry} %设置页边距的宏包
 \geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm} %设置页边距
 \usepackage{setspace}   %行间距
 \setstretch{1.25} % 任意行距
 
-\usepackage{fancyhdr}%导入fancyhdr包
+\usepackage{fancyhdr}%导入fancyhdr包(页眉页脚)
 \usepackage{lastpage}
 \fancyhead{} % 初始化页眉
 \fancyhead[L]{page \thepage \  of \pageref{LastPage}}
 \fancyhead[R]{\textsl{\leftmark}}
 \setlength{\headheight}{14.49998pt}
 
+% 设置caption字体大小
+\usepackage{caption}
+\captionsetup{font=footnotesize}
+
 \title{实验标题}
 \newcommand{\Supervisor}{\textsl{魏更宇副教授}}
 \newcommand{\Course}{\textsl{编译原理与技术程序设计}}
+
+% 作者
 \author{
 2019114514班 \quad 田所浩二 \quad 2019114514\\
 2019114514班 \quad 田所浩二 \quad 2019114514\\
 2019114514班 \quad 田所浩二 \quad 2019114514
 }
+
+% 日期
 \date{\today}
 
 \newcommand{\chap}[1]{\input{chap/#1}}
+
+% 代码块格式设置
+\lstset {
+	frame=single, % 单线框边框
+	tabsize=2, % tab显示空格数
+	basicstyle=\ttfamily, % 等宽字体
+	breaklines=true, % 自动换行
+	flexiblecolumns, % 反正加上它
+	captionpos=b, % caption 位于底部
+}
 
 \begin{document}
 
@@ -39,7 +59,7 @@
 \include{cover}
 
 \clearpage
-\tableofcontents
+\tableofcontents % 生成目录
 \clearpage
 
 \pagestyle{fancy}
@@ -48,6 +68,8 @@
 \chap{chap1}
 \chap{chap2}
 \chap{chap3}
+\chap{chap4}
+\chap{chap5}
 
 \end{document}
 
