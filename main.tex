@@ -12,7 +12,7 @@
 %\usepackage{times}
 \usepackage[colorlinks, linkcolor=black, anchorcolor=black, citecolor=black]{hyperref}
 \usepackage{booktabs}
-\usepackage[table]{xcolor}
+\usepackage[table, dvipsnames]{xcolor}
 
 \usepackage{geometry} %设置页边距的宏包
 \geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm} %设置页边距
@@ -37,7 +37,7 @@
 }
 \newcommand{\verbatiminput}[1]{%
   \VerbatimInput[
-	label=\fbox{\texttt{\detokenize{#1}}},
+    label=\fbox{\color{Black}\texttt{\detokenize{#1}}},
   ]{#1}%
 }
 
