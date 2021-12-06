@@ -26,6 +26,21 @@
 \fancyhead[R]{\textsl{\leftmark}}
 \setlength{\headheight}{14.49998pt}
 
+\usepackage{fancyvrb}
+% redefine \VerbatimInput
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput} {
+	fontsize=\footnotesize,
+	labelposition=topline,
+	frame=lines,  % top and bottom rule only
+	framesep=1em, % separation between frame and text
+	rulecolor=\color{Gray},
+}
+\newcommand{\verbatiminput}[1]{%
+  \VerbatimInput[
+	label=\fbox{\texttt{\detokenize{#1}}},
+  ]{#1}%
+}
+
 % 设置caption字体大小
 \usepackage{caption}
 \captionsetup{font=footnotesize}
