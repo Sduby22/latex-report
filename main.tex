@@ -1,4 +1,4 @@
-\documentclass[UTF8,12pt,a4paper]{ctexart}
+\documentclass[titlepage, UTF8,12pt,a4paper]{ctexart}
 \usepackage{amsmath}
 
 \usepackage{listings}
@@ -73,10 +73,15 @@
 
 \begin{document}
 
+\pagestyle{empty}
+\include{cover}
+
+\clearpage
+\tableofcontents % 生成目录
+\clearpage
+
 \pagestyle{fancy}
 \setcounter{page}{1}
-
-\maketitle
 
 \chap{chap1}
 \chap{chap2}
