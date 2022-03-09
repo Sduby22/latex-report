@@ -1,4 +1,4 @@
-\documentclass[titlepage, UTF8,12pt,a4paper]{ctexart}
+\documentclass[titlepage, UTF8,9pt,a4paper]{ctexart}
 \usepackage{amsmath}
 \usepackage{mathtools}
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -29,6 +29,14 @@
 \fancyhead[R]{\textsl{\leftmark}}
 \setlength{\headheight}{14.49998pt}
 
+\usepackage{minted}
+\usepackage[fencedCode, pipeTables, headerAttributes, relativeReferences,
+	    smartEllipses, theme=witiko/dot]{markdown}
+
+\setkeys{Gin}{
+  % width=\columnwidth,
+  % % height=0.2\paperheight,
+  keepaspectratio}
 \usepackage{fancyvrb}
 % redefine \VerbatimInput
 \RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput} {
@@ -42,6 +50,14 @@
   \VerbatimInput[
     label=\fbox{\color{Black}\texttt{\detokenize{#1}}},
   ]{#1}%
+}
+\global\def\markdownRendererImage#1#2#3#4{
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=#4\linewidth]{#3}
+	\caption{#1}%
+	\label{#1}
+\end{figure}
 }
 
 % 设置caption字体大小
