@@ -4,3 +4,12 @@
 *.aux
 *.idx
 *.toc
+
+_markdown_main
+_minted-main
+main.fdb_latexmk
+main.fls
+main.markdown.err
+main.markdown.in
+main.markdown.lua
+main.xdv
