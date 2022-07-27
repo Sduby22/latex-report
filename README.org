@@ -3,40 +3,36 @@
 
 极简的Latex模板, 按照个人的审美调整优化了部分细节参数如页间距,字体大小,页眉页脚等. 需要TexLive 2022及以上版本才能编译.
 
-** 效果图 :ATTACH:
-:PROPERTIES:
-:ID:       5a20ba76-9ede-494e-9167-aa9cd813e7f2
-:END:
+** 效果图
 - 带封面页
 
-[[attachment:_20220728_022224screenshot.png]]
+  [[./img/titlepage.png]]
 
 - 不带封面页
 
-[[attachment:_20220728_022338screenshot.png]]
-
+  [[./img/notitlepage.png]]
 
 
 ** 快速开始
 1. 安装[[https://www.tug.org/texlive/][TexLive]](需要2022及以上版本)
-2. 终端输入=make=命令进行编译
-3. 编译成功后打开生成的=main.pdf=文件进行查看
-4. 在=title.tex=中编辑你的实验标题,作者以及日期,并选择是否启用标题页
-5. 在=chap/=文件夹中编辑你的实验报告, 如你的实验报告包含三个部分,你可以将其分为=chap1.tex~chap3.tex=3个文件中, 当然,你也可以将报告全部塞到一个chap中
-6. 在=chaps.tex=文件中使用=\chap{}=宏来引入你需要的=.tex=文件. 比如你只使用了=chap1.tex,chap2.tex,wow.tex=3个文件,则=chaps.tex=的内容为
+2. 终端输入 =make= 命令进行编译
+3. 编译成功后打开生成的 =main.pdf= 文件进行查看
+4. 在 =title.tex= 中编辑你的实验标题,作者以及日期,并选择是否启用标题页
+5. 在 =chap/= 文件夹中编辑你的实验报告, 如你的实验报告包含三个部分,你可以将其分为 =chap1.tex~chap3.tex= 3个文件中, 当然,你也可以将报告全部塞到一个chap中
+6. 在 =chaps.tex= 文件中使用 =\chap{}= 宏来引入你需要的 =.tex= 文件. 比如你只使用了 =chap1.tex,chap2.tex,wow.tex= 3个文件,则 =chaps.tex= 的内容为
   #+begin_src latex
 \chap{chap1}
 \chap{chap2}
 \chap{wow}
   #+end_src
   事实上, 你可以将报告全塞到chap1中, 我这样做仅是个人习惯将每一个section单独放到一个tex文件中, 你可以不这样做
-7. 使用=make=命令重新编译,并查看结果
+7. 使用 =make= 命令重新编译,并查看结果
 
 ** 文件说明
 - =cover.tex=: 用来生成标题页报告封面, 你可能不会想修改它
-- =main.tex=: 乱七八糟的=usepackage=和一堆package的配置, 你可能很少修改它
+- =main.tex=: 乱七八糟的 =usepackage= 和一堆package的配置, 你可能很少修改它
 - =title.tex=: 用来配置实验标题,作者,是否开启封面等, 你可能经常修改它
-- =chaps.tex=: 用来列出你需要引入=chap=文件夹下的哪些文件, 你可能经常修改它
+- =chaps.tex=: 用来列出你需要引入 =chap= 文件夹下的哪些文件, 你可能经常修改它
 
 ** 我不太会使用Latex
 推荐教程: [[https://github.com/CTeX-org/lshort-zh-cn][一份（不太）简短的 LaTeX2ε 介绍]]
