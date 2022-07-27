@@ -1,6 +1,7 @@
-resume.pdf: main.tex
-	xelatex main.tex 
-	xelatex main.tex 
+main.pdf: main.tex
+	xelatex -shell-escape main.tex
+	xelatex -shell-escape main.tex
+	xelatex -shell-escape main.tex
 
 clean:
-	rm -f *.log *.out *.pdf *.aux *.idx *.toc
+	rm -f *.log *.out *.pdf *.aux *.idx *.toc *.xdv *.fdb_latexmk *.fls

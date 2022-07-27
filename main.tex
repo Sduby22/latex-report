@@ -60,24 +60,12 @@
 \end{figure}
 }
 
-% 设置caption字体大小
+% 将caption字体大小设小一点
 \usepackage{caption}
 \captionsetup{font=footnotesize}
 
-\title{实验标题}
-\newcommand{\Supervisor}{\textsl{魏更宇副教授}}
-\newcommand{\Course}{\textsl{编译原理与技术程序设计}}
-
-% 作者
-\author{
-2019114514班 \quad 田所浩二 \quad 2019114514\\
-2019114514班 \quad 田所浩二 \quad 2019114514\\
-2019114514班 \quad 田所浩二 \quad 2019114514
-}
-
-% 日期
-\date{\today}
-
+% 将title.tex里的内容引入
+\input{title}
 \newcommand{\chap}[1]{\input{chap/#1}}
 
 % 代码块格式设置
@@ -92,14 +80,27 @@
 
 \begin{document}
 
+
+\def\ZERO{0}
+\ifx\enabletitlepage\ZERO
+
+\pagestyle{fancy}
+\setcounter{page}{1}
+\maketitle
+
+\else
+
+\pagestyle{empty}
+\include{cover}
+\clearpage
+\tableofcontents % 生成目录
+\clearpage
 \pagestyle{fancy}
 \setcounter{page}{1}
 
-\maketitle
+\fi
 
-\chap{chap1}
-\chap{chap2}
-\chap{chap3}
+\input{chaps}
 
 \end{document}
 
